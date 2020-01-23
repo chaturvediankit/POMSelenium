@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Suite" duration-ms="11909" started-at="2020-01-22T19:45:05Z" finished-at="2020-01-22T19:45:17Z">
+    <groups>
+    </groups>
+    <test name="Test" duration-ms="11909" started-at="2020-01-22T19:45:05Z" finished-at="2020-01-22T19:45:17Z">
+      <class name="com.Web.TC_LoginTestCases">
+        <test-method status="PASS" signature="setup()[pri:0, instance:com.Web.TC_LoginTestCases@3e6fa38a]" name="setup" is-config="true" duration-ms="5352" started-at="2020-01-22T19:45:05Z" finished-at="2020-01-22T19:45:10Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method status="PASS" signature="loginWithValidCredentials()[pri:0, instance:com.Web.TC_LoginTestCases@3e6fa38a]" name="loginWithValidCredentials" duration-ms="4164" started-at="2020-01-22T19:45:10Z" finished-at="2020-01-22T19:45:15Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginWithValidCredentials -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.Web.TC_LoginTestCases@3e6fa38a]" name="tearDown" is-config="true" duration-ms="2354" started-at="2020-01-22T19:45:15Z" finished-at="2020-01-22T19:45:17Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.Web.TC_LoginTestCases -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
+</testng-results>

@@ -19,6 +19,7 @@ public class TC_LoginTestCases {
 		LoginPage loginPage = new LoginPage(driver);
 		HomePage homePage = new HomePage(driver);
 		try {
+			driver.get(fileManger.pReader("URL"));
 			loginPage.loginApplication(fileManger.pReader("username"), fileManger.pReader("passwordDev"));
 			//rf.AssertElementIsPresent(homePage.linkDashboard);
 		} catch (Exception e) {
