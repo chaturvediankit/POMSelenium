@@ -16,15 +16,16 @@ public class LoginPage {
 	}
 	
 	
-	//Login and Logout
+	//Login page Objects
 	@FindBy(id="username") WebElement txtUsername;
 	@FindBy(id="password") WebElement txtPassword;
 	@FindBy(xpath="//button[@aria-label='Sign in']") WebElement btnSignIn;
 	@FindBy(id="join_now") WebElement linkJoinNow;
 	@FindBy(xpath="//a[contains(text(),'Forgot password?')]") WebElement forgotPasswordLink;
-	
+	@FindBy(xpath="//div[@id='error-for-password' and @error-for='password']")
+	WebElement errorPassword;
 		
-	//@To login into application		
+	//To login into application		
 	public void loginApplication(String usernameValue, String passwordValue) throws InterruptedException, IOException{
 		txtUsername.clear();
 		txtUsername.sendKeys(usernameValue);
@@ -32,13 +33,4 @@ public class LoginPage {
 		txtPassword.sendKeys(passwordValue);
 		btnSignIn.click();
 		 }
-	// To Change Password
-	public void changePassword(){
-		 
-		 
-	 }
-	// Forgot Password email
-	 public void forgotPassword(){
-		 
-	 }
 	}

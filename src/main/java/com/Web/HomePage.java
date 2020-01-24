@@ -18,4 +18,6 @@ public class HomePage {
 	WebElement linkLogout;
 	@FindBy(xpath = "//a[contains(text(),'Sign in')]")
 	WebElement linkSignIn;
+	@FindBy(id="feed-tab-icon")
+	WebElement tabHome;
 }
