@@ -14,6 +14,8 @@ WebDriver driver;
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 	}
+	@FindBy(xpath="//button[@class='optanon-alert-box-close banner-close-button']")
+	WebElement btnCloseCookies;
 	@FindBy(id="CareersRegistration_EmailAddress")
 	WebElement txtEmail;
 	@FindBy(id="CareersRegistration_Password")
@@ -27,10 +29,14 @@ WebDriver driver;
 	WebElement txtLastName;
 	
 	//@FindBy(xpath="(//button[@data-id='ddBoxRegistrationCountryRegion'])[2]")
-	@FindBy(xpath="//*[@id=\"Form-2d7221ae-8ecd-4205-a525-29930cb60caf\"]/section[1]/div[4]/div[1]/div/div/div[1]/button[1]")
+	@FindBy(xpath="//div[@class='col-sm-6']//div[@class='col-xs-12 col-sm-10 custom-dropdown']//span[@class='acn-icon icon-arrow-dropdown']")
 	WebElement dropDownCoutry;
+	@FindBy(xpath="//span[text()='India']")
+	WebElement selectCountry;
 	@FindBy(xpath="(//button[@data-id='ddBoxRegistrationStateProvince']/span)[2]")
 	WebElement dropDownState;
+	//span[contains(text(),'India') and @class='text']
+	//a[@data-analytics-link-name='india']/span
 	
 	@FindBy(id="CareerRegistration_City") 
 	WebElement txtCity;
@@ -38,6 +44,14 @@ WebDriver driver;
 	WebElement txtPhone;
 	@FindBy(id="chkJobAlert")
 	WebElement chkBoxJobAlert;
+	
+	public void selectCountry(String countryName) {
+		try {
+			
+		}catch(Exception e) {
+			System.out.println("Not able to select Country");
+		}
+	}
 	
 	
 }
