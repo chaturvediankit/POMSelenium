@@ -4,6 +4,7 @@
   <test thread-count="5" name="Test">
     <classes>
       <class name="com.Web.TC_LoginPageTests"/>
+      <class name="com.Web.TC_SignUpTests"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

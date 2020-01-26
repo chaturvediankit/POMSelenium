@@ -1,5 +1,6 @@
 package com.Web;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -28,16 +29,12 @@ WebDriver driver;
 	@FindBy(id="CareerRegistration_LastName")
 	WebElement txtLastName;
 	
-	//@FindBy(xpath="(//button[@data-id='ddBoxRegistrationCountryRegion'])[2]")
 	@FindBy(xpath="//div[@class='col-sm-6']//div[@class='col-xs-12 col-sm-10 custom-dropdown']//span[@class='acn-icon icon-arrow-dropdown']")
-	WebElement dropDownCoutry;
-	@FindBy(xpath="//span[text()='India']")
-	WebElement selectCountry;
+	WebElement dropDownCountry;
+	
 	@FindBy(xpath="(//button[@data-id='ddBoxRegistrationStateProvince']/span)[2]")
 	WebElement dropDownState;
-	//span[contains(text(),'India') and @class='text']
-	//a[@data-analytics-link-name='india']/span
-	
+		
 	@FindBy(id="CareerRegistration_City") 
 	WebElement txtCity;
 	@FindBy(id="TalentConnectionRegistration_PhoneNumber")
@@ -45,8 +42,13 @@ WebDriver driver;
 	@FindBy(id="chkJobAlert")
 	WebElement chkBoxJobAlert;
 	
-	public void selectCountry(String countryName) {
+	String countryPath="//span[text()='";
+	
+	
+	public void selectCountryFromOptions(String countryName) {
 		try {
+			dropDownCountry.click();
+			driver.findElement(By.xpath(countryPath+countryName+"']")).click();
 			
 		}catch(Exception e) {
 			System.out.println("Not able to select Country");

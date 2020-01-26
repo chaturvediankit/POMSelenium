@@ -6,6 +6,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -15,6 +16,20 @@ import org.openqa.selenium.support.ui.Select;
 
 
 public class WebDriverHelper {
+	public void clickUsingJS(WebDriver driver,WebElement clickElement) {
+		JavascriptExecutor jse = (JavascriptExecutor)driver;
+		jse.executeScript("arguments[0].click();", clickElement);
+		
+	}
+	public void scrollIntoView(WebDriver driver,WebElement viewElement) {
+		JavascriptExecutor jse = (JavascriptExecutor)driver;
+		jse.executeScript("arguments[0].scrollIntoView()", viewElement); 
+	}
+	public void typeText(WebElement txtElement, String text) {
+		
+		txtElement.clear();
+		txtElement.sendKeys(text);
+	}
 	
 	public String GetCurrentDate(){
 		DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd");
