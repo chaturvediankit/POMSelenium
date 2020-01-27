@@ -12,14 +12,14 @@ public class TC_SignUpTests {
 	 WebDriverObject driverObj=new WebDriverObject();
 	 FileManager fileManager=new FileManager();
 	 WebDriverHelper driverHelper=new WebDriverHelper();
-	 @BeforeClass
+	 @BeforeClass(alwaysRun = true)
 	 void setup() throws IOException, InterruptedException {
 		 String browser=fileManager.pReader("browser");
 		 driver=driverObj.setup(browser);
-		 driver.get(fileManager.pReader("urlSignUP"));
-		 
+		 driver.get(fileManager.pReader("urlSignUP")); 
 	 }
-	 @Test
+	 
+	 @Test(groups = { "testgroup" })
 	 public void userSignUp() throws IOException {
 		 SignUpPage signUp=new SignUpPage(driver);
 		 signUp.btnCloseCookies.click();
@@ -37,6 +37,7 @@ public class TC_SignUpTests {
 		 signUp.chkBoxJobAlert.click();
 		 
 	 }
+	 
 	 @AfterClass
 	 void closeDriver() {
 		 driver.close();

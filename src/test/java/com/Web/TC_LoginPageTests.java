@@ -15,7 +15,7 @@ public class TC_LoginPageTests {
  FileManager fileManager=new FileManager();
 	
  
- @BeforeClass
+ @BeforeClass (alwaysRun = true)
  void setup() throws IOException, InterruptedException {
 	 String browser=fileManager.pReader("browser");
 	 driver=driverObj.setup(browser);
@@ -28,14 +28,16 @@ public class TC_LoginPageTests {
 	 assertEquals(login.errorPassword.isDisplayed(), true);
  
  }
- @Test (dependsOnMethods="validateLoginError",groups = { "Smoke","regression" })
+ 
+ @Test (groups = { "Smoke","regression" })
  void validateLoginFeature() throws InterruptedException, IOException {
 	 LoginPage login=new LoginPage(driver);
 	 HomePage home=new HomePage(driver);
 	 login.loginApplication(fileManager.pReader("username"), fileManager.pReader("passwordLinkdIn"));
 	 assertEquals(home.tabHome.isDisplayed(), true);
  }
- @Test (dependsOnMethods="validateLoginFeature",groups = { "Smoke","regression" })
+ 
+ @Test (groups = { "Smoke","regression" })
  void validateLogOut() {
 	 HomePage home=new HomePage(driver);
 	 home.dropDownProfile.click();
@@ -43,6 +45,7 @@ public class TC_LoginPageTests {
 	 boolean present=home.linkSignIn.isDisplayed();
 	 assertEquals(present, true);
  }
+ 
  @AfterClass
  void closeDriver() {
 	 driver.close();
